@@ -1,0 +1,7 @@
+<h1>Home#top</h1>
+<p>Find me in app/views/home/top.html.erb</p>
+
+
+<% @tasks.each do |task| %>
+<p>  <%= link_to(task.content, "/#{task.id}" )%></p>
+<% end %>

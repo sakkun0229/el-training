@@ -8,6 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <%=link_to("新規タスク", "/new") %>
+  </header>
+
+  <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice]%>
+        </div>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>
