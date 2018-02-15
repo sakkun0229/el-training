@@ -1,7 +1,8 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
 
 
 <% @tasks.each do |task| %>
-<p>  <%= link_to(task.content, "/#{task.id}" )%></p>
+<div><%= link_to("詳細", "/#{task.id}" )%>
+<%=task.content%>
+<p>〆切：<%=task.deadline%></p>
+</div>
 <% end %>

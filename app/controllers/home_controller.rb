@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    @task = Task.new(content: params[:content])
+    @task = Task.new(content: params[:content],deadline: params[:deadline])
     if @task.save
       flash[:notice] = "投稿を保存しました"
       redirect_to("/")
