@@ -8,19 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
-    <%=link_to("トップ", "/") %>
-    <%=link_to("新規タスク", "/new") %>
-    <%=link_to("ユーザー一覧", "/users/index") %>
-    <%=link_to("ログイン", "/login") %>
-
-  </header>
-
-  <% if flash[:notice] %>
-        <div class="flash">
-          <%= flash[:notice]%>
-        </div>
-  <% end %>
+<header>
+      <%= link_to("トップ", "/") %>
+      
+</header>
 
   <body>
     <%= yield %>
