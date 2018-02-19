@@ -1,8 +1,7 @@
 
 
 <% @tasks.each do |task| %>
-<div><%= link_to("詳細", "/#{task.id}" )%>
-<%=task.content%>
-<p>〆切：<%=task.deadline%></p>
+<div><%= link_to(task.content, "/#{task.id}" )%>
+〆切：<%=task.deadline%>
 </div>
 <% end %>

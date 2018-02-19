@@ -28,6 +28,7 @@ class HomeController < ApplicationController
   def update
     @task = Task.find_by(id: params[:id])
     @task.content = params[:content]
+    @task.deadline = params[:deadline]
     if @task.save
       redirect_to("/")
       flash[:notice] = "変更を保存しました"
