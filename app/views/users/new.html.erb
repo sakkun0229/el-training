@@ -1,0 +1,17 @@
+<%= form_tag("/users/create")do %>
+
+<% @user.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+
+
+<p>user name</p>
+  <input name="name">
+<p>maill adress</p>
+  <input name="email">
+<p>password</p>
+  <input name="password">
+<div>
+  <input type="submit" value="投稿">
+</div>
+<%end%>
