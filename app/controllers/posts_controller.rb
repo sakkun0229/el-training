@@ -7,4 +7,15 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+  def new
+
+  end
+
+  def create
+    @post = Post.new(title:params[:title],content:params[:content])
+    @post.save
+    redirect_to("/")
+  end
+
+
 end

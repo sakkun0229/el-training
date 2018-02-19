@@ -2,6 +2,7 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 
 <% @posts.each do |post| %>
+  <div>
   <%= link_to(post.title , "/#{post.id}") %>
-
+  </div>
 <% end %>
