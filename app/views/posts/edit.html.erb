@@ -1,4 +1,4 @@
-<%= form_tag("/posts/#{@post.id}/update")do %>
+<%= form_tag("/#{@post.id}/update")do %>
   <div>
     <textarea name="title"><%= @post.title %></textarea>
   </div>
