@@ -1,4 +1,9 @@
 <div><%= @post.title %></div>
 
 
-<%= @post.content %>
+<p><%= @post.content %></p>
+
+<div>
+<%= link_to("編集", "/#{@post.id}/edit")%>
+
+</div>
