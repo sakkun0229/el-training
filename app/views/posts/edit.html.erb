@@ -1,4 +1,9 @@
 <%= form_tag("/#{@post.id}/update")do %>
+
+<% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+
   <div>
     <textarea name="title"><%= @post.title %></textarea>
   </div>

@@ -1,5 +1,11 @@
 
 <%= form_tag("/posts/create")do %>
+
+<% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+
+
 <p>タイトル</p>
   <textarea name="title"></textarea>
 <p>内容</p>
