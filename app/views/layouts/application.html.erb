@@ -17,7 +17,7 @@
     <%= link_to("ログイン", "/login") %>
     <%= link_to("ログアウト", "/logout", {method: :post}) %>
   </div>
-  <%= session[:user_id] %>
+  <%= @current_user.name %>
 </header>
 
 <div>
