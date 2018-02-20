@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+  post "logout" => "users#logout"
+
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   get "signup" => "users#new"
@@ -7,10 +11,6 @@ Rails.application.routes.draw do
   post "/users/:id/update" => "users#update"
   post "/users/:id/destroy" => "users#destroy"
 
-  get "login" => "users#login_form"
-  post "login" => "users#login"
-  post "logout" => "users#logout"
-
   get "/" => "posts#index"
   get "/new" => "posts#new"
   post "/posts/create" => "posts#create"
@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get ":id/edit" => "posts#edit"
   post "/:id/update" => "posts#update"
   post "/:id/destroy" => "posts#destroy"
+
+  namespace :admin do
+    get 'users' => 'users#index'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
