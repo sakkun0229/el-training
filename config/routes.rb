@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/users/:id/destroy" => "users#destroy"
 
   get "login" => "users#login_form"
+  post "login" => "users#login"
 
   get "/" => "posts#index"
   get "/new" => "posts#new"
