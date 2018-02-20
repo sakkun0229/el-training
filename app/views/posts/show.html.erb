@@ -1,7 +1,16 @@
-<div><%= @post.title %></div>
+<div>
+  title<br>
+  <%= @post.title %>
+</div>
 
+<p>
+タスク内容<br>
+<%= @post.content %>
+</p>
 
-<p><%= @post.content %></p>
+<p>
+  
+</p>
 
 <div>
 <%= link_to("編集", "/#{@post.id}/edit")%>
