@@ -3,14 +3,18 @@
   <%= @post.title %>
 </div>
 
-<p>
-タスク内容<br>
+<p>タスク内容<br>
 <%= @post.content %>
 </p>
 
-<p>
-  
+<p>締切<br>
+  <%= @post.deadline %>
 </p>
+
+<p>更新日<br>
+  <%= @post.updated_at %>
+</p>
+
 
 <div>
 <%= link_to("編集", "/#{@post.id}/edit")%>
