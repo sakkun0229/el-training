@@ -30,6 +30,8 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title]
     @post.content = params[:content]
+    @post.deadline = params[:deadline]
+
     if @post.save
       flash[:notice] = "内容を更新しました"
       redirect_to("/")
