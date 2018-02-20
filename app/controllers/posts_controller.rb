@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title:params[:title],content:params[:content])
+    @post = Post.new(title:params[:title],content:params[:content],user_id:@current_user.id)
     if @post.save
       flash[:notice] = "新規タスクを投稿しました"
       redirect_to("/")
