@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
   before_action :auth_user!
-  
+
   def index
-    @posts = Post.all.order(updated_at: :desc)
+    if params[:sort] == 'updated_at'
+      @posts = Post.all.order(updated_at: :desc)
+    else params[:sort] == 'deadline'
+      @posts = Post.all.order(deadline: :desc)
+    end
   end
 
   def show
