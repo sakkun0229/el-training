@@ -1,7 +1,16 @@
-<h2><%= @user.name %></h2>
-<p><%= @user.email %></p>
+<h2>name: <%= @user.name %></h2>
+<p>email: <%= @user.email %></p>
 
-<div>
+<p>
 <%= link_to("編集", "/admin/users/#{@user.id}/edit") %>
 <%= link_to("削除", "/admin/users/#{@user.id}/destroy",{method: "post"}) %>
+</p>
+
+
+<div>このユーザーのタスク
+  <% @user.posts.each do |post| %>
+  <ul><li>
+    <%= link_to(post.content, "/posts/#{post.id}") %>
+  </li></ul>
+  <%end%>
 </div>

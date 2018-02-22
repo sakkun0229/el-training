@@ -2,7 +2,8 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 
 <% @posts.each do |post| %>
-  <div>
+  <div><p>
+    <%= link_to(post.user.name, "/users/#{post.user.id}") %><br>
     <%= link_to(post.title , "/#{post.id}") %>
-  </div>
+  </p></div>
 <% end %>
