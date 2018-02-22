@@ -31,6 +31,7 @@ class Admin::UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.password = params[:password]
+    @user.admin = params[:admin]
     if @user.save
       flash[:notice] = "情報を更新しました"
       redirect_to("/admin/users")
