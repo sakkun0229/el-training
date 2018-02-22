@@ -10,7 +10,7 @@
 <div>このユーザーのタスク
   <% @user.posts.each do |post| %>
   <ul><li>
-    <%= link_to(post.content, "/posts/#{post.id}") %>
+    <%= link_to(post.content, "/#{post.id}") %>
   </li></ul>
   <%end%>
 </div>
