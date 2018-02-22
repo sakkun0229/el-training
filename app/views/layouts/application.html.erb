@@ -18,9 +18,12 @@
     <% if @current_user %>
       <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
       <%= link_to("ログアウト", "/logout", {method: :post}) %>
+      <%= link_to("管理者", "/admin/users") %>
     <%else%>
       <%= link_to("ログイン", "/login") %>
     <%end%>
+
+
 
   </div>
 </header>
