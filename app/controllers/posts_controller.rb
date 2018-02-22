@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :auth_user!
+  before_action :ensure_correct_user,{only:[:edit,:update,:destroy]}
 
   def index
     if params[:sort] == 'updated_at'

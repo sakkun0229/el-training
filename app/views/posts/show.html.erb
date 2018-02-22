@@ -20,8 +20,9 @@
   <%= @post.updated_at %>
 </p>
 
-
+<%if @user.id == @current_user.id%>
 <div>
 <%= link_to("編集", "/#{@post.id}/edit")%>
 <%= link_to("削除", "/#{@post.id}/destroy",{method: "post"}) %>
 </div>
+<%end%>
