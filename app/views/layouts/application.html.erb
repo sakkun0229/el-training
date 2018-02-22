@@ -13,7 +13,6 @@
     <%= link_to("トップ", "/") %>
     <%= link_to("新規タスク", "/new") %>
     <%= link_to("ユーザー一覧", "/users/index") %>
-    <%= link_to("ユーザー登録", "/signup") %>
 
     <% if @current_user %>
       <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
