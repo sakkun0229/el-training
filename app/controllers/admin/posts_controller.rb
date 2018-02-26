@@ -22,4 +22,11 @@ class Admin::PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    flash[:notice] = "タスクを削除しました"
+    redirect_to("/admin/users")
+  end
+
 end
