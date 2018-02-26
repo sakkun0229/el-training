@@ -1,0 +1,19 @@
+<%= form_tag("/admin/#{@post.id}/update")do %>
+
+<% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+<% end %>
+
+  <div>
+    <input name="title" value="<%= @post.title %>">
+  </div>
+  <div>
+    <textarea name="content"><%= @post.content %></textarea>
+  </div>
+  <div>
+    <input type="date" name="deadline" value="<%= @post.deadline %>">
+  </div>
+
+
+  <input type="submit" value="保存">
+<%end%>

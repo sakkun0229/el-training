@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     post "/users/:id/destroy" => "users#destroy"
 
     get "/:id" => 'posts#show'
+    get ":id/edit" => "posts#edit"
+    post "/:id/update" => "posts#update"
 
   end
 
