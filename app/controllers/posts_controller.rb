@@ -2,6 +2,16 @@ class PostsController < ApplicationController
   before_action :auth_user!
   before_action :ensure_correct_user,{only:[:edit,:update,:destroy]}
 
+
+  #投稿の編集を本人のみに制限
+  def ensure_correct_user
+    @post = Post.find_by(id: params[:id])
+    if @current_user.id != @post.user_id
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
+  end
+
   def index
     if params[:sort] == 'updated_at'
       @posts = Post.all.order(updated_at: :desc)

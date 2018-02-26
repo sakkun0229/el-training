@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   before_action :ensure_correct_user,{only:[:edit,:update]}
 
+#userの編集を本人のみに制限
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
+  end
 
   def index
     @users = User.all

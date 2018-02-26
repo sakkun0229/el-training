@@ -17,14 +17,7 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by(id: session[:user_id])
   end
 
-  #投稿の編集を本人のみに制限
-  def ensure_correct_user
-    @post = Post.find_by(id: params[:id])
-    if @current_user.id != @post.user_id
-      flash[:notice] = "権限がありません"
-      redirect_to("/")
-    end
-  end
+  
 
   def auth_admin
     if @current_user.admin != 1
