@@ -5,7 +5,6 @@
 
 <div>
   title:<%= @post.title %><br>
-  status:<%= @post.status%>
 </div>
 
 <p>タスク内容<br>
@@ -14,6 +13,11 @@
 
 <p>締切<br>
   <%= @post.deadline %>
+</p>
+
+<p>
+  status:<%= @post.status%>
+  priority:<%= @post.priority%>
 </p>
 
 <p>更新日<br>

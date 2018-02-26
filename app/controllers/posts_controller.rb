@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     @post.deadline = params[:deadline]
     @post.status = params[:status]
+    @post.priority = params[:priority]
 
     if @post.save
       flash[:notice] = "内容を更新しました"
