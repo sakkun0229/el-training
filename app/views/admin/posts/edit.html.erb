@@ -4,16 +4,23 @@
   <%= message %>
 <% end %>
 
-  <div>
+  <div>title<br>
     <input name="title" value="<%= @post.title %>">
   </div>
-  <div>
+  <div>content<br>
     <textarea name="content"><%= @post.content %></textarea>
   </div>
-  <div>
+  <div>期限<br>
     <input type="date" name="deadline" value="<%= @post.deadline %>">
   </div>
 
+  <div>状況
+      <select name="status">
+        <option>未着手</option>
+        <option>着手中</option>
+        <option>完了</option>
+      </select>
+  </div>
 
   <input type="submit" value="保存">
 <%end%>
