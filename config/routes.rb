@@ -30,14 +30,10 @@ Rails.application.routes.draw do
     post "/users/:id/destroy" => "users#destroy"
 
     get "/:id" => 'posts#show'
-<<<<<<< HEAD
     get ":id/edit" => "posts#edit"
     post "/:id/update" => "posts#update"
     post "/:id/destroy" => "posts#destroy"
-    
-=======
 
->>>>>>> cf470adf43aed3c7a8aae53a829edd45e0a94990
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
