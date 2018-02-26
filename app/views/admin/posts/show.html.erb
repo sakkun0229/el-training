@@ -1,0 +1,26 @@
+
+<p>担当者:
+  <%= link_to(@user.name, "/users/#{@user.id}") %>
+</p>
+
+<div>
+  title:
+  <%= @post.title %>
+</div>
+
+<p>タスク内容<br>
+<%= @post.content %>
+</p>
+
+<p>締切<br>
+  <%= @post.deadline %>
+</p>
+
+<p>更新日<br>
+  <%= @post.updated_at %>
+</p>
+
+<div>
+<%= link_to("編集", "/admin/#{@post.id}/edit")%>
+<%= link_to("削除", "/admin/#{@post.id}/destroy",{method: "post"}) %>
+</div>
