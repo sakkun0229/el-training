@@ -3,6 +3,7 @@ class Admin::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @user = @post.user
   end
+<<<<<<< HEAD
 
   def edit
     @post = Post.find_by(id: params[:id])
@@ -29,4 +30,6 @@ class Admin::PostsController < ApplicationController
     redirect_to("/admin/users")
   end
 
+=======
+>>>>>>> cf470adf43aed3c7a8aae53a829edd45e0a94990
 end
