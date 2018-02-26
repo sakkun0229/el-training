@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_correct_user
-    if @current_user.id != params[:id].to_i
+    @post = Post.find_by(id: params[:id])
+    if @current_user.id != @post.user_id
       flash[:notice] = "権限がありません"
       redirect_to("/")
     end
