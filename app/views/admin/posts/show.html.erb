@@ -1,11 +1,10 @@
 
 <p>担当者:
-  <%= link_to(@user.name, "admin/users/#{@user.id}") %>
+  <%= link_to(@user.name, "/admin/users/#{@user.id}") %>
 </p>
 
 <div>
   title:<%= @post.title %><br>
-  status:<%= @post.status%>
 </div>
 
 <p>タスク内容<br>
@@ -16,11 +15,18 @@
   <%= @post.deadline %>
 </p>
 
+<p>
+  status:<%= @post.status%>
+  priority:<%= @post.priority%>
+</p>
+
 <p>更新日<br>
   <%= @post.updated_at %>
 </p>
 
+<%if @user.id == @current_user.id%>
 <div>
-<%= link_to("編集", "/admin/#{@post.id}/edit")%>
-<%= link_to("削除", "/admin/#{@post.id}/destroy",{method: "post"}) %>
+<%= link_to("編集", "/#{@post.id}/edit")%>
+<%= link_to("削除", "/#{@post.id}/destroy",{method: "post"}) %>
 </div>
+<%end%>
