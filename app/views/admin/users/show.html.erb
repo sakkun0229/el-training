@@ -7,7 +7,8 @@
 </p>
 
 
-<div>このユーザーのタスク
+<div>このユーザーのタスク<br>
+  <%= link_to("新規タスク作成", "/admin/new" )%>
   <% @user.posts.each do |post| %>
   <ul><li>
     <%= link_to(post.content, "/admin/#{post.id}") %>

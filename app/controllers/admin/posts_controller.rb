@@ -4,6 +4,19 @@ class Admin::PostsController < ApplicationController
     @user = @post.user
   end
 
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(title:params[:title],content:params[:content],deadline:params[:deadline],user_id:@current_user.id)
+    if @post.save
+      flash[:notice] = "新規タスクを投稿しました"
+      redirect_to("/admin/users")
+    else
+      render("/admin/posts/new")
+    end
+  end
 
   def edit
     @post = Post.find_by(id: params[:id])

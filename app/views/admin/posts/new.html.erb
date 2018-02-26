@@ -1,0 +1,22 @@
+
+<%= form_tag("/admin/posts/create")do %>
+
+  <% @post.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+
+
+  <p>タイトル</p>
+  <input name="title">
+  <p>内容</p>
+  <textarea name="content"></textarea>
+  <p>締め切</p>
+  <input type="date" name="deadline">
+
+
+
+
+  <div><input type="submit" value="投稿"></div>
+
+
+<%end%>

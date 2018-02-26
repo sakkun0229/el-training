@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     post "/users/:id/update" => "users#update"
     post "/users/:id/destroy" => "users#destroy"
 
+    get "/new" => "posts#new"
+    post "/posts/create" => "posts#create"
     get "/:id" => 'posts#show'
     get ":id/edit" => "posts#edit"
     post "/:id/update" => "posts#update"
