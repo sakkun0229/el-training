@@ -7,10 +7,25 @@
 </div>
 <%end%>
 
-<div>このユーザーのタスク
+<table class="table" border="1">
+  <tr>
+    <th>user</th>
+    <th>title</th>
+    <th>content</th>
+    <th>status</th>
+    <th>priority</th>
+    <th>deadline</th>
+    <th>update</th>
+  </tr>
   <% @user.posts.each do |post| %>
-  <ul><li>
-    <%= link_to(post.content, "/#{post.id}") %>
-  </li></ul>
-  <%end%>
-</div>
+  <tr>
+    <td><%=link_to(post.user.name, "/users/#{post.user.id}")%></td>
+    <td><%=link_to(post.title , "/#{post.id}")%></td>
+    <td><%=post.content%></td>
+    <td><%=post.status%></td>
+    <td><%=post.priority%></td>
+    <td><%=post.deadline%></td>
+    <td><%=post.updated_at%></td>
+  </tr>
+  <% end %>
+</table>
