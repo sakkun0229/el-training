@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :email, {presence: true, uniqueness: true}
   validates :password, {presence: true}
 
+  enum admin:{false:0,admin:1}
+
   def posts
     return Post.where(user_id: self.id)
   end

@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by(id: session[:user_id])
   end
 
-  
+
 
   def auth_admin
-    if @current_user.admin != 1
+    if @current_user.admin != "admin"
       flash[:notice] = "admin権限がありません"
       redirect_to '/'
       return
