@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.search(params[:search])
     if params[:sort] == 'updated_at'
       @posts = Post.all.order(updated_at: :desc)
     else params[:sort] == 'deadline'

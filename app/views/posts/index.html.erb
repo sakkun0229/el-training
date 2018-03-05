@@ -1,10 +1,11 @@
 
 <h1>タスクリスト</h1>
 
-<!--検索フォーム形だけ-->
 <p>
+<%= form_tag("/", method:"get") do%>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil %>
+<%end%>
 </p>
 
 <table class="table">
