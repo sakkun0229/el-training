@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title:params[:title],content:params[:content],deadline:params[:deadline],status:"未着手",user_id:@current_user.id)
+    @post = Post.new(title:params[:title],content:params[:content],deadline:params[:deadline],status:0,user_id:@current_user.id)
     if @post.save
       flash[:notice] = "新規タスクを投稿しました"
       redirect_to("/")
@@ -49,8 +49,8 @@ class PostsController < ApplicationController
     @post.title = params[:title]
     @post.content = params[:content]
     @post.deadline = params[:deadline]
-    @post.status = params[:status]
-    @post.priority = params[:priority]
+    @post.status = params[:status].to_i
+    @post.priority = params[:priority].to_i
 
     if @post.save
       flash[:notice] = "内容を更新しました"

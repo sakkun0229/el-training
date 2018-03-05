@@ -14,19 +14,20 @@
     <input type="date" name="deadline" value="<%= @post.deadline %>">
   </div>
 
+
   <div>状況
       <select name="status">
-        <option>未着手</option>
-        <option>着手中</option>
-        <option>完了</option>
+        <option value="0">未着手</option>
+        <option value="1">着手中</option>
+        <option value="2">完了</option>
       </select>
   </div>
 
   <div>優先度
       <select name="priority">
-        <option>高</option>
-        <option>中</option>
-        <option>低</option>
+        <option value="0".to_i>低</option>
+        <option value="1".to_i>中</option>
+        <option value="2".to_i>高</option>
       </select>
   </div>
 

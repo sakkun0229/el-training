@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226041719) do
+ActiveRecord::Schema.define(version: 20180305065607) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20180226041719) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.date "deadline"
-    t.string "status"
-    t.string "priority"
+    t.integer "status"
+    t.integer "priority"
   end
 
   create_table "users", force: :cascade do |t|
