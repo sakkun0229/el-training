@@ -10,9 +10,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-#Herokuにデプロイする際に以下を有効にする
-#, group: :development
+gem 'sqlite3', group: :development
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -43,9 +41,9 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 #herokuにデプロイする前に以下を有効にしてbundle install
-#group :production do
-#  gem 'pg', '0.20.0'
-#end
+group :production do
+  gem 'pg', '0.20.0'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
