@@ -12,7 +12,7 @@ class Post < ApplicationRecord
 
   def self.search(search)
       if search
-        Post.where(['name LIKE(?)', "%#{search}%"]) #検索とnameの部分一致を表示。
+        Post.where(['title LIKE(?)', "%#{search}%"]) #検索とnameの部分一致を表示。
       else
         Post.all
       end
