@@ -18,6 +18,10 @@ class PostsController < ApplicationController
       @posts = Post.all.order(updated_at: :desc)
     else params[:sort] == 'deadline'
       @posts = Post.all.order(deadline: :desc)
+    #else params[:sort] == 'status'
+    #  @posts = Post.all.order(status: :desc)
+    #else params[:sort] == 'priority'
+    #  @posts = Post.all.order(priority: :desc)
     end
   end
 
